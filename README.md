@@ -22,18 +22,7 @@
 
 <br/><br/>
 
-<img src="https://img.shields.io/github/last-commit/LoganthP/Intelliward?style=flat-square&color=38bdf8" alt="Last commit"/>
-<img src="https://img.shields.io/github/stars/LoganthP/Intelliward?style=flat-square&color=5eead4" alt="Stars"/>
-<img src="https://img.shields.io/github/languages/top/LoganthP/Intelliward?style=flat-square&color=818cf8" alt="Top language"/>
-<img src="https://img.shields.io/badge/status-final--year%20prototype-0ea5e9?style=flat-square" alt="Status"/>
-
-<br/><br/>
-
 **Camera observation → verified identity → role & ward → visit → task evidence → audit trail → live dashboard**
-
-<sub>Final-year CSE major project · Vidyavardhaka College of Engineering, Mysuru</sub>
-
-<br/>
 
 [Overview](#-overview) · [Features](#-highlights) · [Tech Stack](#-tech-stack) · [Architecture](#-architecture) · [Quick Start](#-quick-start) · [Demo](#-demo-walkthrough) · [Tamper Evidence](#-tamper-evident-audit-trail) · [Troubleshooting](#-troubleshooting)
 
@@ -493,17 +482,6 @@ This is a prototype, and the numbers should be read that way.
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
-## 👥 Team
-
-| Name | Role |
-|:---|:---|
-| **Loganth P** ([@LoganthP](https://github.com/LoganthP)) | Team member |
-| **Harshith Gowda K** | Team member |
-| **Mahesh** | Team member |
-| **Dr. Janhavi V** | Project guide, Dept. of CSE |
-
-Department of Computer Science & Engineering, **Vidyavardhaka College of Engineering, Mysuru**.
-
 ## 📄 License
 
 Academic major-project prototype. All rights reserved by the authors unless a `LICENSE` file in this repository states otherwise.
@@ -511,7 +489,3 @@ Academic major-project prototype. All rights reserved by the authors unless a `L
 <div align="center">
 
 <img src="assets/divider.svg" width="100%" alt=""/>
-
-<sub>Built to make ward activity **verifiable**, not just visible. ⭐ Star the repo if you found it useful.</sub>
-
-</div>
