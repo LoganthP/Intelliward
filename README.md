@@ -20,7 +20,7 @@
 <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
 <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT"/>
 
-<br/><br/>
+
 
 **Camera observation → verified identity → role & ward → visit → task evidence → audit trail → live dashboard**
 
