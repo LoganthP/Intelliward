@@ -339,32 +339,6 @@ python run.py frontend
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
-## 🎬 Demo Walkthrough
-
-### What you see on first start
-
-The database seeds **three wards** (Ward A, ICU *restricted*, OT-1 *restricted*), **four staff members**, demo tasks and **two cameras**:
-
-| Camera | Source | Behaviour |
-|:---|:---|:---|
-| **CAM-02** · ICU simulated feed | Built-in simulator | Starts automatically and plays a **150-second mock-ward scenario**: a nurse enters, works at the bedside and equipment area (completing seeded tasks), an unrecognized visitor appears, a doctor wears the wrong uniform colour, and an OT staff member enters the restricted ICU |
-| **CAM-01** · Ward A entrance | Your webcam (`0`) | Stopped until you press **Start camera** |
-
-> Identities in the simulated feed are **simulated**. Use it to demonstrate the workflow, never as recognition accuracy. Set `SIM_SPEED=3` in `vision-worker/.env` to play it faster.
-
-### Real camera demo (consented volunteers)
-
-1. **Staff** → *Edit* a person → turn on *Written consent recorded* → *Save*.
-2. **Staff** → *Enroll face* → capture 3–6 photos (front, slight turns, good light) → *Save photos*. The worker builds the encrypted template within seconds and the badge changes to *Enrolled*.
-   If the browser cannot open the webcam, stop CAM-01 first (only one program can use it on Windows) or upload photos instead.
-3. **Wards & cameras** → open CAM-01 → check the zones (`bedside`, `equipment`) match your mock ward. You can also upload an MP4 recording instead of using the webcam.
-4. **Tasks** → *Assign task*, e.g. *Ward inspection* in Ward A for the enrolled person.
-5. **Live monitoring** → *Start camera*. Walk into view: *Identifying* → name (verified). After the minimum time the task becomes **Verified**; a medication delivery goes to **Needs review** for a supervisor.
-6. Have someone who is not enrolled walk in → an *Unrecognized person* alert appears after a few seconds.
-7. **Audit integrity** → *Anchor now* → *Verify integrity*.
-
-<img src="assets/divider.svg" width="100%" alt=""/>
-
 ## 🧪 Tamper-Evidence Demo
 
 **In the dashboard:** *Audit integrity → Run test* runs all six attacks on an in-memory copy.
@@ -468,17 +442,6 @@ Intelliward/
 | Start again from a clean database | `python run.py reset` |
 
 </details>
-
-<img src="assets/divider.svg" width="100%" alt=""/>
-
-## ⚖️ Scope & Responsible Use
-
-This is a prototype, and the numbers should be read that way.
-
-- Figures in the IEEE paper (E1–E3) are **preliminary component experiments**, not results of this integrated prototype.
-- The simulated feed demonstrates the **workflow only**. Recognition accuracy must be measured on consented volunteer footage using the paper's Table II metrics (TAR at FAR, IDF1, Visit-F1, task F1, alert latency).
-- Presence near a bed is **not proof of clinical care**. The system records observed evidence and requires authorized confirmation for clinical completion.
-- Use volunteers and a mock ward. **Do not use real patient areas without institutional approval**, and never use these metrics as the sole basis for disciplinary decisions.
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
