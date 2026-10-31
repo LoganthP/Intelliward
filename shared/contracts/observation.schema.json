@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IntelliWard worker observation batch (POST /api/v1/internal/observations)",
+  "type": "object",
+  "required": ["camera_id", "tracks"],
+  "properties": {
+    "camera_id": {"type": "string", "description": "Camera code, e.g. CAM-01"},
+    "fps": {"type": "number"},
+    "frame_ts": {"type": ["string", "null"], "format": "date-time"},
+    "lost_tracks": {"type": "array", "items": {"type": "string"}},
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["track_id", "identity_status"],
+        "properties": {
+          "track_id": {"type": "string", "description": "Camera-scoped track key, never a permanent identity"},
+          "bbox": {"type": "array", "items": {"type": "number", "minimum": 0, "maximum": 1}, "minItems": 4, "maxItems": 4},
+          "identity_status": {"enum": ["pending", "verified", "unknown"]},
+          "staff_id": {"type": ["integer", "null"]},
+          "similarity": {"type": "number", "description": "Model score, not a calibrated probability"},
+          "role_color": {"enum": ["blue", "white", "green", "orange", "gray", "unknown"]},
+          "role_color_conf": {"type": "number"},
+          "det_conf": {"type": "number"},
+          "model_version": {"type": "string"}
+        }
+      }
+    }
+  }
+}

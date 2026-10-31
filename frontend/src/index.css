@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --canvas: #f3f8fb;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: #0f2e44;
+  font-family: Figtree, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "tnum" 0;
+}
+
+/* Fixed colour field the glass panels float over */
+.canvas-field {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(42rem 32rem at 8% 6%, rgba(46, 196, 160, 0.30), transparent 60%),
+    radial-gradient(38rem 30rem at 92% 12%, rgba(90, 169, 240, 0.30), transparent 62%),
+    radial-gradient(44rem 34rem at 70% 96%, rgba(150, 196, 255, 0.24), transparent 60%),
+    radial-gradient(30rem 26rem at 18% 88%, rgba(255, 214, 186, 0.30), transparent 60%),
+    #f3f8fb;
+}
+
+@layer components {
+  .glass {
+    @apply rounded-xl2 border border-white/80 bg-white/60 shadow-glass backdrop-blur-xl;
+  }
+  .glass-strong {
+    @apply rounded-xl2 border border-white/90 bg-white/80 shadow-lift backdrop-blur-xl;
+  }
+  .num { font-variant-numeric: tabular-nums; }
+  .field {
+    @apply w-full rounded-xl border border-ink/10 bg-white/80 px-3 py-2 text-sm text-ink outline-none transition
+      placeholder:text-ink-faint focus:border-teal focus:ring-4 focus:ring-teal/15;
+  }
+  .label { @apply mb-1 block text-[13px] font-medium text-ink-soft; }
+  .h-page { @apply font-display text-[1.65rem] font-semibold leading-tight tracking-[-0.02em] text-ink; }
+  .h-card { @apply font-display text-[0.98rem] font-semibold tracking-[-0.01em] text-ink; }
+}
+
+:focus-visible { outline: 3px solid rgba(11, 122, 131, 0.45); outline-offset: 2px; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: rgba(15, 46, 68, 0.14); border-radius: 10px; border: 2px solid transparent; background-clip: padding-box; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Canonical audit record (hashed as SHA256(prev_hash || canonical_json))",
+  "type": "object",
+  "required": ["schema_version", "sequence", "event_id", "event_type", "occurred_at", "data"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "sequence": {"type": "integer", "minimum": 1},
+    "event_id": {"type": "string"},
+    "event_type": {"type": "string", "examples": ["visit.started", "task.status_changed", "alert.created"]},
+    "occurred_at": {"type": "string", "description": "UTC, ISO 8601 with seconds and Z suffix"},
+    "data": {"type": "object"}
+  },
+  "description": "Canonical JSON: keys sorted, separators (',', ':'), ASCII escaping, no NaN."
+}

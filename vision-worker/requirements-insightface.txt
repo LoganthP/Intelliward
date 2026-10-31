@@ -1,0 +1,5 @@
+# Optional: RetinaFace + ArcFace (InsightFace buffalo_l). On Windows this needs
+# "Microsoft C++ Build Tools" (Desktop development with C++). If it fails to install,
+# the worker automatically uses OpenCV YuNet + SFace instead.
+insightface==0.7.3
+onnxruntime==1.20.1
